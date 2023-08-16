@@ -8,6 +8,14 @@ use App\Models\Owner;
 
 class OwnerController extends Controller
 {
+
+    public function index()
+    {
+        $owners = Owner::all();
+
+        return response()->json($owners); // Return owners as JSON response
+    }
+
     /**
      * Display a listing of the resource.
      */

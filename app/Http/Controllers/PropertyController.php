@@ -7,6 +7,12 @@ use App\Models\Property;
 
 class PropertyController extends Controller
 {
+    public function index()
+    {
+        $property = Property::all();
+
+        return response()->json($property); // Return owners as JSON response
+    }
     public function store(Request $request)
     {
         $validatedData = $request->validate([
